@@ -1,0 +1,8 @@
+name: 'RTE MIS News'
+type: module
+description: 'Provides News content type and listing'
+core_version_requirement: ^8 || ^9 || ^10
+package: Custom
+dependencies:
+  - media
+  - link

@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+  content_type:
+    - news
+id: node.news.field_thumbnail
+field_name: field_thumbnail
+entity_type: node
+bundle: news
+label: 'Thumbnail'
+description: 'Custom thumbnail image for the news item.'
+required: false
+translatable: true
+settings:
+  alt_field: true
+  title_field: false
+  default_image: {  }

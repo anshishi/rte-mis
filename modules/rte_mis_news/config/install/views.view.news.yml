@@ -1,0 +1,94 @@
+id: news
+label: News
+module: views
+description: 'Displays News items with thumbnail and external link.'
+tag: ''
+base_table: node_field_data
+core: 9.x
+display:
+  default:
+    display_plugin: default
+    id: default
+    display_title: Master
+    position: 0
+    display_options:
+      access:
+        type: perm
+        perms:
+          - 'access content'
+      cache:
+        type: none
+      query:
+        type: views_query
+        options:
+          distinct: false
+      exposed_form:
+        type: none
+      pager:
+        type: full
+        options:
+          items_per_page: 10
+      style:
+        type: unformatted
+        options: { }
+      row:
+        type: fields
+      fields:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          label: Title
+          alter:
+            alter_text: false
+            make_link: true
+            absolute: false
+            external: false
+            replace_spaces: false
+          link_to_node: true
+          element_type: ''
+          element_class: ''
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          settings: { }
+          plugin_id: field
+        field_thumbnail:
+          id: field_thumbnail
+          table: node__field_thumbnail
+          field: field_thumbnail
+          label: Thumbnail
+          settings:
+            image_style: thumbnail
+            link_image_to: 'content'
+          plugin_id: field
+        field_external_link:
+          id: field_external_link
+          table: node__field_external_link
+          field: field_external_link
+          label: External Link
+          settings:
+            override: false
+            target: '_blank'
+          plugin_id: field
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          value: 1
+          plugin_id: boolean
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          value:
+            - news
+          plugin_id: bundle
+      sorts:
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          order: DESC
+          plugin_id: standard

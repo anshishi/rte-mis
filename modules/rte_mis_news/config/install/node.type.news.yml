@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'News'
+type: news
+description: 'News content type for custom thumbnails and external links.'
+third_party_settings: {  }
